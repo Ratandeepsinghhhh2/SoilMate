@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SoilMate Design System - Warm, earthy, farmer-friendly colors
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - warm cream backgrounds */
+    --background: 37 78% 97%;
+    --foreground: 20 30% 15%;
+
+    /* Card colors - soft earth tones */
+    --card: 37 78% 95%;
+    --card-foreground: 20 30% 15%;
+
+    /* Popover colors */
+    --popover: 37 78% 95%;
+    --popover-foreground: 20 30% 15%;
+
+    /* Primary - Fresh farming green */
+    --primary: 142 71% 45%;
+    --primary-foreground: 37 78% 97%;
+    --primary-glow: 142 71% 55%;
+
+    /* Secondary - Warm earth brown */
+    --secondary: 28 70% 37%;
+    --secondary-foreground: 37 78% 97%;
+
+    /* Muted colors */
+    --muted: 37 50% 90%;
+    --muted-foreground: 20 20% 40%;
+
+    /* Accent - Sunny yellow */
+    --accent: 45 93% 58%;
+    --accent-foreground: 20 30% 15%;
+
+    /* Alert colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 37 78% 97%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 20 30% 15%;
+    --success: 142 71% 45%;
+    --success-foreground: 37 78% 97%;
+
+    /* Form elements */
+    --border: 37 30% 85%;
+    --input: 37 50% 92%;
+    --ring: 142 71% 45%;
+
+    /* Transitions and animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-earth: linear-gradient(135deg, hsl(var(--secondary)), hsl(28 70% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-warm: 0 8px 30px -8px hsl(var(--secondary) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - warmer, earthy dark theme */
+    --background: 20 30% 8%;
+    --foreground: 37 78% 95%;
+
+    --card: 20 30% 12%;
+    --card-foreground: 37 78% 95%;
+
+    --popover: 20 30% 12%;
+    --popover-foreground: 37 78% 95%;
+
+    --primary: 142 71% 55%;
+    --primary-foreground: 20 30% 8%;
+    --primary-glow: 142 71% 65%;
+
+    --secondary: 28 50% 25%;
+    --secondary-foreground: 37 78% 95%;
+
+    --muted: 20 20% 18%;
+    --muted-foreground: 37 30% 65%;
+
+    --accent: 45 93% 68%;
+    --accent-foreground: 20 30% 8%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 37 78% 95%;
+    --warning: 38 92% 60%;
+    --success: 142 71% 55%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* SoilMate custom animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-grow {
+    animation: grow 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  /* Hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-warm hover:-translate-y-1;
+  }
+
+  .button-glow {
+    @apply shadow-soft hover:shadow-glow transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes grow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
