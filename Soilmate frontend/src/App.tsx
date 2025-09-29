@@ -1,3 +1,4 @@
+import Farmers from "./pages/Farmers";   // 👈 Add this at the top
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,6 +25,7 @@ const App = () => (
           <Navigation />
           <NotificationSystem />
           <Routes>
+            <Route path="/farmers" element={<Farmers />} /> 
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />

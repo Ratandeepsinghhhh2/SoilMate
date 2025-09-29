@@ -9,7 +9,8 @@ import {
   Info, 
   Mail, 
   Menu,
-  Sprout
+  Sprout,
+  Users // 👈 new icon for Farmers
 } from "lucide-react";
 
 const Navigation = () => {
@@ -22,6 +23,8 @@ const Navigation = () => {
     { href: "/profile", label: "Profile", icon: User },
     { href: "/about", label: "About", icon: Info },
     { href: "/contact", label: "Contact", icon: Mail },
+    // 👇 New Farmers link
+    { href: "/farmers", label: "Farmers", icon: Users },
   ];
 
   const isActive = (path: string) => location.pathname === path;
